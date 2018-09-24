@@ -1,0 +1,9 @@
+---
+applications:
+- name: tfweb-Development
+  memory: 256M
+  buildpack: staticfile_buildpack
+  path: dist/
+  routes:
+  - route: 
+  - route:

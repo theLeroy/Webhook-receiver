@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="275px" height="275px" viewBox="0 0 275 275" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M156.879772,80.8804943 L210.050931,172.564651 C216.098531,182.992656 212.547511,196.348774 202.119506,202.396374 C198.792682,204.325727 195.015154,205.341838 191.169357,205.341838 L84.8270383,205.341838 C72.7722979,205.341838 63,195.56954 63,183.5148 C63,179.669002 64.0161115,175.891475 65.9454643,172.564651 L119.116623,80.8804943 C125.164224,70.4524889 138.520341,66.901469 148.948347,72.9490693 C152.237929,74.8568243 154.972017,77.5909119 156.879772,80.8804943 Z" id="path-1"></path>
+        <filter x="-28.0%" y="-31.0%" width="156.0%" height="162.1%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="14.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.62745098   0 0 0 0 0.298039216   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboard-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Triangle-2-Copy-44" fill-rule="nonzero">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#A04CFF" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

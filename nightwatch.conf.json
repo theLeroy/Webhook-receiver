@@ -1,0 +1,28 @@
+{
+  "src_folders": ["tests/e2e/specs"],
+  "custom_assertions_path" : ["tests/e2e/custom-assertions"],
+  "globals_path": "tests/e2e/globals.js",
+  "output_folder" : "tests/e2e/reports",
+  "selenium": {
+    "start_process": false
+  },
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://localhost:8080/",
+      "selenium_port": 9515,
+      "selenium_host": "127.0.0.1",
+      "default_path_prefix" : "",
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "args": ["no-sandbox", "disable-gpu"]
+        }
+      }
+    },
+    "integration" : {
+      "launch_url" : ""
+    }
+  }
+}

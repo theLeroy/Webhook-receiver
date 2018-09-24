@@ -1,0 +1,38 @@
+{
+  "name": "Webhook Receiver",
+  "description": "The one and Only Webhook Receiver",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "test:e2e-local": "vue-cli-service test:e2e --config ./nightwatch.conf.json --env default",
+    "test:e2e-remote": "vue-cli-service test:e2e --config ./nightwatch.conf.json --env integration --url",
+    "tVersion": "node scripts/version.js",
+    "build:prod": "vue-cli-service build --modern",
+    "build:dev": "vue-cli-service build --modern --mode 'development'",
+    "deploy:prod": "node scripts/deploy.js prod",
+    "deploy:dev": "node scripts/deploy.js dev"
+  },
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.0.0",
+    "@vue/cli-plugin-eslint": "^3.0.0",
+    "@vue/cli-service": "^3.0.0",
+    "@vue/eslint-config-standard": "^3.0.1",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "shelljs": "^0.8.2",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "commitVersion": "20180918-113649.654c18f"
+}
