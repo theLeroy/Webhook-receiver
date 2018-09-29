@@ -1,5 +1,5 @@
 {
-  "name": "Webhook Receiver",
+  "name": "Webhook-Receiver",
   "description": "The one and Only Webhook Receiver",
   "version": "0.1.1",
   "private": true,
