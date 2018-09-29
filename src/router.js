@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Video from './views/Video.vue'
+import Present from '@/views/Public/Present'
+import Interface from '@/views/Inside/Interface'
 
 Vue.use(Router)
 
@@ -8,16 +9,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Video',
-      component: Video
+      name: 'Overview',
+      component: Present
     },
     {
-      path: '/Frage',
-      name: 'Frage',
+      path: '/home',
+      name: 'home',
+      component: Interface
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Frage.vue')
+      // component: () => import(/* webpackChunkName: "about" */ './views/Frage.vue')
     }
   ]
 })
