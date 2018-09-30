@@ -1,17 +1,14 @@
 <template>
-  <div>
-
+  <div class="">
+    sd
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'Video',
   components: {
-    BackgroundGradient,
-    VideoAdvertiser,
-    Triangels
+
   }
 }
 
