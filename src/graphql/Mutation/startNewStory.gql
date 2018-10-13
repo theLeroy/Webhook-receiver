@@ -1,0 +1,5 @@
+mutation ($hash: String) {
+  startNewStory(couponTypeHash: $hash) {
+    token
+  }
+}

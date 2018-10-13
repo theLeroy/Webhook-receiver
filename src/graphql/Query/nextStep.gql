@@ -1,0 +1,13 @@
+query ($token: String) {
+  nextStep (token: $token) {
+		video
+    question
+    answers {
+      _id
+      text
+    }
+    answerCorrect
+    phoneRequired
+    smsSent
+  }
+}

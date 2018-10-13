@@ -1,12 +1,17 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import VueApollo from 'vue-apollo'
+import { createProvider } from './vue-apollo'
 
 Vue.config.productionTip = false
+Vue.use(VueApollo)
 
 new Vue({
   router,
   render: h => h(App),
+  apolloProvider: createProvider(),
+
   created () {
     // Environment indicator
     if (process.env.NODE_ENV !== 'production') {
