@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Video',
+  name: 'Interface',
   components: {
 
   },
