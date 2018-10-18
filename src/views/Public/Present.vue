@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>sd</div>
-    <input type="text" :value="data.UserId"/>
+    <input type="text"/>
   </div>
 </template>
 
@@ -9,13 +9,12 @@
 import WebhookByUser from '@/graphql/Query/WebhookByUser.gql'
 
 export default {
-  name: 'Video',
+  name: 'Present',
   data () {
     return {
 
     }
   },
-  // Apollo-specific options
   apollo: {
     // Advanced query with parameters
     // The 'variables' method is watched by vue
@@ -29,7 +28,7 @@ export default {
         }
       },
       // Variables: deep object watch
-      deep: false,
+      deep: true,
       // We use a custom update callback because
       // the field names don't match
       // By default, the 'pingMessage' attribute
