@@ -2,6 +2,11 @@
   <div>
     <p> sdsasjkhdg</p>
     <ApolloQuery :query="require('../../graphql/Query/WebhookByUser.gql')" :variables="{ token: `sadsda` }">
+      <ApolloSubscribeToMore
+  :document="require('../../graphql/Query/WebhookByUser.gql')"
+  :variables="{ token: `sadsda` }"
+  :updateQuery="onMessageAdded"
+/>
       <template slot-scope="{result : {loading, error, data } }">
         <span v-if="loading">Loading</span>
         <div v-if="data && !loading">
@@ -14,7 +19,18 @@
 
 <script>
 export default {
-  name: 'Interface'
+  name: 'Interface',
+  methods: {
+  onMessageAdded (previousResult, { Data }) {
+    // The previous result is immutable
+    const newResult = {
+      messages: [...previousResult.messages],
+    }
+    // Add the question to the list
+    newResult.messages.push(Data.data.messageAdded)
+    return newResult
+  },
+},
 }
 </script>
 
