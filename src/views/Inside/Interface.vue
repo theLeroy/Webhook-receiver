@@ -1,12 +1,7 @@
 <template>
   <div>
-    <p> sdsasjkhdg</p>
-    <ApolloQuery :query="require('../../graphql/Query/WebhookByUser.gql')" :variables="{ token: `sadsda` }">
-      <ApolloSubscribeToMore
-  :document="require('../../graphql/Query/WebhookByUser.gql')"
-  :variables="{ token: `sadsda` }"
-  :updateQuery="onMessageAdded"
-/>
+    <p>sdsasjkhdg</p>
+    <ApolloQuery :query="require('../../graphql/Query/WebhookByUser.gql')" :variables="{ token: `KLUGHILUSdgluiweiuzg` }">
       <template slot-scope="{result : {loading, error, data } }">
         <span v-if="loading">Loading</span>
         <div v-if="data && !loading">
