@@ -1,0 +1,8 @@
+subscription NewWebhookIncoming($token: String) {
+  NewWebhookIncoming(userid: $token) {
+    _id
+    UserId
+    intTime
+    WebhookConntent
+  }
+}

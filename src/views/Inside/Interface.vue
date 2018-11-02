@@ -1,31 +1,49 @@
 <template>
   <div>
-    <p>sdsasjkhdg</p>
-    <ApolloQuery :query="require('../../graphql/Query/WebhookByUser.gql')" :variables="{ token: `KLUGHILUSdgluiweiuzg` }">
-      <template slot-scope="{result : {loading, error, data } }">
-        <span v-if="loading">Loading</span>
-        <div v-if="data && !loading">
-          <span>{{data}}</span>
-        </div>
-      </template>
-    </ApolloQuery>
+    <div v-for="(WebhookByUser, index) in WebhookByUser">
+      {{WebhookByUser}}
+    </div>
   </div>
 </template>
 
 <script>
+
+import QqlgetWebhook from '@/graphql/Query/WebhookByUser.gql'
+import NewWebhookIncoming from '@/graphql/Subscription/NewWebhookIncoming.gql'
+
 export default {
   name: 'Interface',
-  methods: {
-  onMessageAdded (previousResult, { Data }) {
-    // The previous result is immutable
-    const newResult = {
-      messages: [...previousResult.messages],
+  apollo: {
+    WebhookByUser: {
+      query: QqlgetWebhook,
+      variables () {
+        return {
+          token: `EaLxPFoCVkfAMGkA4XqqGyLdvs2ZcaiMqE3o7VY1C5bhnghsVkmbbfqXNU8ThWg4`
+        }
+      },
+      subscribeToMore: {
+        document: NewWebhookIncoming,
+        // Variables passed to the subscription. Since we're using a function,
+        // they are reactive
+        variables () {
+          return {
+            token: `EaLxPFoCVkfAMGkA4XqqGyLdvs2ZcaiMqE3o7VY1C5bhnghsVkmbbfqXNU8ThWg4`
+          }
+        },
+        // Mutate the previous result
+        updateQuery: (previousResult, { subscriptionData }) => {
+          console.log(previousResult, subscriptionData);
+          return {
+            WebhookByUser: [
+              ...previousResult.WebhookByUser,
+              subscriptionData.data.NewWebhookIncoming,
+            ]
+          }
+          // Here, return the new result from the previous with the new data
+        }
+      }
     }
-    // Add the question to the list
-    newResult.messages.push(Data.data.messageAdded)
-    return newResult
-  },
-},
+  }
 }
 </script>
 
