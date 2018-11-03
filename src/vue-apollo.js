@@ -10,8 +10,6 @@ import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
-
-
 // Install the vue plugin
 Vue.use(VueApollo)
 
@@ -62,18 +60,17 @@ export function createProvider (options = {}) {
   // })
   // apolloClient.wsClient = wsClient
 
-
   const httpLink = new HttpLink({
     // You should use an absolute URL here
-    uri: 'http://localhost:4000/graphql',
+    uri: 'http://localhost:4000/graphql'
   })
 
   // Create the subscription websocket link
   const wsLink = new WebSocketLink({
     uri: 'ws://localhost:4000/subscriptions',
     options: {
-      reconnect: true,
-    },
+      reconnect: true
+    }
   })
 
   // using the ability to split links, you can send data to each link
@@ -93,7 +90,7 @@ export function createProvider (options = {}) {
   const apolloClient = new ApolloClient({
     link,
     cache: new InMemoryCache(),
-    connectToDevTools: true,
+    connectToDevTools: true
   })
 
   // Create vue apollo provider
