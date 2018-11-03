@@ -32,58 +32,58 @@
 </template>
 
 <script>
-import { CREATE_USER_MUTATION, SIGNIN_USER_MUTATION } from '../constants/graphql'
-import { GC_USER_ID, GC_AUTH_TOKEN } from '../constants/settings'
-export default {
-  name: 'AppLogin',
-  data () {
-    return {
-      email: '',
-      login: true,
-      name: '',
-      password: ''
-    }
-  },
-  methods: {
-    confirm () {
-      const { name, email, password } = this.$data
-      if (this.login) {
-        this.$apollo.mutate({
-          mutation: SIGNIN_USER_MUTATION,
-          variables: {
-            email,
-            password
-          }
-        }).then((result) => {
-          const id = result.data.signinUser.user.id
-          const token = result.data.signinUser.token
-          this.saveUserData(id, token)
-        }).catch((error) => {
-          alert(error)
-        })
-      } else {
-        this.$apollo.mutate({
-          mutation: CREATE_USER_MUTATION,
-          variables: {
-            name,
-            email,
-            password
-          }
-        }).then((result) => {
-          const id = result.data.signinUser.user.id
-          const token = result.data.signinUser.token
-          this.saveUserData(id, token)
-        }).catch((error) => {
-          alert(error)
-        })
+  import { CREATE_USER_MUTATION, SIGNIN_USER_MUTATION } from '../constants/graphql'
+  import { GC_USER_ID, GC_AUTH_TOKEN } from '../constants/settings'
+  export default {
+    name: 'AppLogin',
+    data () {
+      return {
+        email: '',
+        login: true,
+        name: '',
+        password: ''
       }
-      this.$router.push({ path: '/' })
     },
-    saveUserData (id, token) {
-      localStorage.setItem(GC_USER_ID, id)
-      localStorage.setItem(GC_AUTH_TOKEN, token)
-      this.$root.$data.userId = localStorage.getItem(GC_USER_ID)
+    methods: {
+      confirm () {
+        const { name, email, password } = this.$data
+        if (this.login) {
+          this.$apollo.mutate({
+            mutation: SIGNIN_USER_MUTATION,
+            variables: {
+              email,
+              password
+            }
+          }).then((result) => {
+            const id = result.data.signinUser.user.id
+            const token = result.data.signinUser.token
+            this.saveUserData(id, token)
+          }).catch((error) => {
+            alert(error)
+          })
+        } else {
+          this.$apollo.mutate({
+            mutation: CREATE_USER_MUTATION,
+            variables: {
+              name,
+              email,
+              password
+            }
+          }).then((result) => {
+            const id = result.data.signinUser.user.id
+            const token = result.data.signinUser.token
+            this.saveUserData(id, token)
+          }).catch((error) => {
+            alert(error)
+          })
+        }
+        this.$router.push({path: '/'})
+      },
+      saveUserData (id, token) {
+        localStorage.setItem(GC_USER_ID, id)
+        localStorage.setItem(GC_AUTH_TOKEN, token)
+        this.$root.$data.userId = localStorage.getItem(GC_USER_ID)
+      }
     }
   }
-}
 </script>

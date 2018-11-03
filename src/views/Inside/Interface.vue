@@ -32,11 +32,11 @@ export default {
         },
         // Mutate the previous result
         updateQuery: (previousResult, { subscriptionData }) => {
-          console.log(previousResult, subscriptionData)
+          console.log(previousResult, subscriptionData);
           return {
             WebhookByUser: [
               ...previousResult.WebhookByUser,
-              subscriptionData.data.NewWebhookIncoming
+              subscriptionData.data.NewWebhookIncoming,
             ]
           }
           // Here, return the new result from the previous with the new data

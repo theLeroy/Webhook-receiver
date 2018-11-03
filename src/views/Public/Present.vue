@@ -24,14 +24,14 @@ export default {
     ping: {
       query: WebhookByUser,
       // Reactive parameters
-      variables () {
+      variables() {
         // Use vue reactive properties here
         return {
-          token: this.pingInput
+            token: this.pingInput,
         }
-      }
-    }
-  }
+      },
+    },
+  },
 }
 
 </script>
