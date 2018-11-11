@@ -24,8 +24,10 @@
     "apollo-utilities": "^1.0.25",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.9.2",
+    "prismjs": "^1.15.0",
     "vue": "^2.5.17",
     "vue-apollo": "^3.0.0-beta.25",
+    "vue-prism-component": "^1.1.1",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

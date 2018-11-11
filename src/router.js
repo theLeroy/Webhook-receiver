@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Present from '@/views/Public/Present.vue'
 
+import 'prismjs'
+import 'prismjs/components/prism-json'
+// import 'prismjs/themes/prism.css'
+
 Vue.use(Router)
 
 export default new Router({
@@ -12,7 +16,7 @@ export default new Router({
       component: Present
     },
     {
-      path: '/home',
+      path: '/home/:Token',
       name: 'home',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route

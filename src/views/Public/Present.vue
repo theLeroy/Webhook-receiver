@@ -1,11 +1,9 @@
 <template>
   <div>
-    <input v-model="pingInput" placeholder="Enter a message" />
-   <p>
-     {{ping}}
-   </p>
-
-    <input name="EndpointToken" type="text" />
+    <form action="/home" method="get">
+      <input type="text" name="Endpoint" placeholder="Your Endpinttoken.">
+      <input type="submit">
+    </form>
   </div>
 </template>
 
@@ -14,24 +12,24 @@ import WebhookByUser from '@/graphql/Query/WebhookByUser.gql'
 
 export default {
   name: 'Present',
-  data () {
-    return {
-      pingInput: 'KLUGHILUSdgluiweiuzg'
-    }
-  },
-  apollo: {
-    // Query with parameters
-    ping: {
-      query: WebhookByUser,
-      // Reactive parameters
-      variables() {
-        // Use vue reactive properties here
-        return {
-            token: this.pingInput,
-        }
-      },
-    },
-  },
+  // data () {
+  //   return {
+  //     pingInput: 'KLUGHILUSdgluiweiuzg'
+  //   }
+  // },
+  // apollo: {
+  //   // Query with parameters
+  //   ping: {
+  //     query: WebhookByUser,
+  //     // Reactive parameters
+  //     variables() {
+  //       // Use vue reactive properties here
+  //       return {
+  //           token: this.pingInput,
+  //       }
+  //     },
+  //   },
+  // },
 }
 
 </script>
