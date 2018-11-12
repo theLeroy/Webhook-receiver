@@ -1,17 +1,17 @@
 <template>
   <div>
-    <form action="/home" method="get">
+    <!-- <form action="/home" method="get">
       <input type="text" name="Endpoint" placeholder="Your Endpinttoken.">
       <input type="submit">
-    </form>
+    </form> -->
   </div>
 </template>
 
 <script>
-import WebhookByUser from '@/graphql/Query/WebhookByUser.gql'
+// import WebhookByUser from '@/graphql/Query/WebhookByUser.gql'
 
 export default {
-  name: 'Present',
+  name: 'Present'
   // data () {
   //   return {
   //     pingInput: 'KLUGHILUSdgluiweiuzg'
