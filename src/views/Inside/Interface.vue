@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="edpoint">
-      <span>{{Token}}</span>
+      <span class="ShowToken">{{Token}}</span>
     </div>
     <div v-for="(WebhookByUser, index) in WebhookByUser.reverse()">
 
-      <Webhookcard :WTime="WebhookByUser['intTime']" :WStart="WebhookByUser['WebhookConntent'].substring(0,50)"/>
+      <!-- <Webhookcard :WTime="WebhookByUser['intTime']" :WStart="WebhookByUser['WebhookConntent'].substring(0,50)"/> -->
 
       <prism class="no-whitespace-normalization" language="json">
-          Id: "{{WebhookByUser._id}}",
-          Endpoint: "{{WebhookByUser.UserId}}",
-          Time: {{new Date(WebhookByUser.intTime).toLocaleString()}},
-          Content: {
-             {{WebhookByUser.WebhookConntent}}
-          }
+Id: "{{WebhookByUser._id}}",
+Endpoint: "{{WebhookByUser.UserId}}",
+Time: {{new Date(WebhookByUser.intTime).toLocaleString()}},
+Content: {
+   {{WebhookByUser.WebhookConntent}}
+}
       </prism>
     </div>
   </div>
@@ -71,7 +71,49 @@ export default {
 }
 </script>
 
+<style scoped lang="scss">
+$greenText: #2ee6b7;
+
+@mixin backG() {
+  background: #33e6d7;
+  background: -moz-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #33e6d7), color-stop(100%, #29e68e));
+  background: -webkit-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
+  background: -o-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
+  background: -ms-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
+  background: linear-gradient(135deg, #33e6d7 0%, #29e68e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33e6d7', endColorstr='#29e68e', GradientType=1 );
+}
+
+.edpoint {
+  width: 800px;
+  margin-left: calc(50% - 400px);
+  margin-top: 30px;
+  margin-bottom: 60px;
+  background: #fff;
+  box-shadow: 0px 0px 250px rgba(0, 0, 0, 1);
+  height: 100px;
+  @include backG;
+  border-radius: 8px;
+}
+.ShowToken {
+  border-radius: 4px;
+  background: #fff;
+  position: relative;
+  height: 50px;
+  margin-top: calc(50px - 25px);
+  margin-left: 50%;
+  transform: translateX(-50%);
+  line-height: 3.2;
+  padding: 0px 20px;
+  color: #8b8b8b;
+  display: inline-block;
+}
+
+</style>
+
 <style lang="scss">
+$greenText: #2ee6b7;
 /* PrismJS 1.15.0
 https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+http+json */
 /**
@@ -82,8 +124,8 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
 
 code[class*="language-"],
 pre[class*="language-"] {
-  width: 60%;
-  color: #f099a6;
+  // width: 100%;
+  color: $greenText;
   background: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -126,16 +168,17 @@ code > * {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em;
   margin: .5em 0;
   overflow: auto;
   border-radius: 0.3em;
   display: block;
+  padding: 5px 85px;
+  box-sizing: border-box;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #272822;
+  // background: #272822;
 }
 
 /* Inline code */

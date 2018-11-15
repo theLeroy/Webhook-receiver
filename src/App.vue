@@ -76,6 +76,8 @@ body {
   height: 100%;
   position: absolute;
   box-sizing: border-box;
+  background: #262822;
+  color: #d0d0d0;
 }
 
 html {
