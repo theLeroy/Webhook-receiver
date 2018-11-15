@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="edpoint">
-      <span class="ShowToken">{{Token}}</span>
+    <div class="edpoint"  v-on:click="copy">
+      <span ref="Ctext" class="ShowToken">{{Token}}</span>
     </div>
     <div v-for="(WebhookByUser, index) in WebhookByUser.reverse()">
 
@@ -35,6 +35,34 @@ export default {
   data () {
     return {
       Token: this.$route.params.Token
+    }
+  },
+  methods: {
+    copy: function (event) {
+      var copyText = this.$refs.Ctext
+
+      var textArea = document.createElement('textarea')
+
+      textArea.value = copyText.innerHTML
+
+      document.body.appendChild(textArea)
+      textArea.select()
+      try {
+        var successful = document.execCommand('copy')
+        var msg = successful ? 'successful' : 'unsuccessful'
+        console.log('Copying text command was ' + msg)
+        if (msg === 'successful') {
+          console.log('copied')
+          let t = this.$refs.Ctext.innerHTML
+          this.$refs.Ctext.innerHTML = 'Copied!'
+          setTimeout(() => {
+            this.$refs.Ctext.innerHTML = t
+          }, 1200)
+        }
+      } catch (err) {
+        console.log('Oops, unable to copy')
+      }
+      document.body.removeChild(textArea)
     }
   },
   apollo: {
