@@ -3,19 +3,23 @@
     <div class="edpoint">
       <span>{{Token}}</span>
     </div>
-    <div v-for="(WebhookByUser, index) in WebhookByUser">
+    <div v-for="(WebhookByUser, index) in WebhookByUser.reverse()">
 
       <Webhookcard :WTime="WebhookByUser['intTime']" :WStart="WebhookByUser['WebhookConntent'].substring(0,50)"/>
 
-      <prism language="json">
-        {{WebhookByUser}}
+      <prism class="no-whitespace-normalization" language="json">
+          Id: "{{WebhookByUser._id}}",
+          Endpoint: "{{WebhookByUser.UserId}}",
+          Time: {{new Date(WebhookByUser.intTime).toLocaleString()}},
+          Content: {
+             {{WebhookByUser.WebhookConntent}}
+          }
       </prism>
     </div>
   </div>
 </template>
 
 <script>
-
 import QqlgetWebhook from '@/graphql/Query/WebhookByUser.gql'
 import NewWebhookIncoming from '@/graphql/Subscription/NewWebhookIncoming.gql'
 import Webhookcard from '@/components/Webhookcard'
@@ -79,7 +83,7 @@ https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clik
 code[class*="language-"],
 pre[class*="language-"] {
   width: 60%;
-  color: #f8f8f2;
+  color: #f099a6;
   background: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -98,6 +102,23 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+
+  white-space: pre-wrap !important;
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+
+  -ms-word-break: break-all !important;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all !important;
+  /* Instead use this non-standard one: */
+  word-break: break-word !important;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  hyphens: auto !important;
 }
 code > * {
   // display: block !important;
