@@ -87,6 +87,21 @@ html {
   width: 100%;
   height: 100%;
 }
+::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #2ee6b7;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: none;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  border-radius: 0px;
+  background-color: rgba(0,0,0,0);
+}
 
 //Reset template Boilertemplate -->
 //

@@ -1,12 +1,9 @@
 <template>
   <div>
     <div class="edpoint"  v-on:click="copy">
-      <span ref="Ctext" class="ShowToken">{{Token}}</span>
+      <span ref="Ctext" class="ShowToken">{{Url}}/r/us/{{Token}}</span>
     </div>
     <div v-for="(WebhookByUser, index) in WebhookByUser.reverse()">
-
-      <!-- <Webhookcard :WTime="WebhookByUser['intTime']" :WStart="WebhookByUser['WebhookConntent'].substring(0,50)"/> -->
-
       <prism class="no-whitespace-normalization" language="json">
 Id: "{{WebhookByUser._id}}",
 Endpoint: "{{WebhookByUser.UserId}}",
@@ -22,19 +19,18 @@ Content: {
 <script>
 import QqlgetWebhook from '@/graphql/Query/WebhookByUser.gql'
 import NewWebhookIncoming from '@/graphql/Subscription/NewWebhookIncoming.gql'
-import Webhookcard from '@/components/Webhookcard'
 
 import Prism from 'vue-prism-component'
 
 export default {
   name: 'Interface',
   components: {
-    Prism,
-    Webhookcard
+    Prism
   },
   data () {
     return {
-      Token: this.$route.params.Token
+      Token: this.$route.params.Token,
+      Url: window.location.hostname
     }
   },
   methods: {
@@ -114,8 +110,8 @@ $greenText: #2ee6b7;
 }
 
 .edpoint {
-  width: 800px;
-  margin-left: calc(50% - 400px);
+  width: 820px;
+  margin-left: calc(50% - 410px);
   margin-top: 30px;
   margin-bottom: 60px;
   background: #fff;
