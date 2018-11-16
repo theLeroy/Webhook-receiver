@@ -78,9 +78,11 @@ body {
   box-sizing: border-box;
   background: #262822;
   color: #d0d0d0;
+  overflow-x: hidden;
 }
 
 html {
+  overflow-x: hidden;
   display: block;
   margin: 0px;
   padding: 0px;
