@@ -34,12 +34,7 @@
 <script>
 
 export default {
-  name: 'FpAnimation',
-  mounted: function () {
-    setInterval(() => {
-
-     }, 1000)
-}
+  name: 'FpAnimation'
 }
 
 </script>
@@ -69,7 +64,6 @@ $greenText: #2ee6b7;
   $tempr: (random(800)- 400);
   $tempWe: (random(125)+ 50);
   $tempWs: $tempWe * 0.5;
-
 
   @keyframes #{$tempN} {
     0% {
