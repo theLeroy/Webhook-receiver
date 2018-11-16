@@ -28,8 +28,8 @@ $greenText: #2ee6b7;
 
 .Title {
   font-size: 60px;
-  margin-left: 5%;
-  margin-top: 10%;
+  margin-left: 5vw;
+  margin-top: 20vh;
   color: $greenText;
   font-weight: 700;
   line-height: 1.2;
@@ -37,7 +37,7 @@ $greenText: #2ee6b7;
 .sTitle {
   line-height: 3;
   font-size: 22px;
-  margin-left: 5%;
+  margin-left: 5vw;
   color: $greenText;
   font-weight: 500;
 }

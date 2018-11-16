@@ -62,8 +62,8 @@ $greenText: #2ee6b7;
   $tempy: (random(90)+ 10); // y start
   $tempye: (random(100)+ 0); // y end
   $tempr: (random(800)- 400);
-  $tempWe: (random(125)+ 50);
-  $tempWs: $tempWe * 0.5;
+  $tempWe: (random(125)+ 75);
+  $tempWs: $tempWe * 0.8;
 
   @keyframes #{$tempN} {
     0% {
@@ -89,7 +89,7 @@ $greenText: #2ee6b7;
   margin-top: -10vh;
   right: -10vw;
 }
-.box{
+.box {
   -webkit-filter: url("#goo");
   filter: url("#goo");
   width:100%;
@@ -98,40 +98,14 @@ $greenText: #2ee6b7;
   left:0;
   top:0;
 }
-.square{
-  position:absolute;
-  background:$greenText;
-  left:50%;
-  top:50%;
-  width:100px;
-  height:100px;
-  margin-top:-50px;
-  margin-left:-50px;
-  border-radius: 100%;
-  transition: .3s ease background;
+@media screen and (min-width: 1500px) {
+  .ground {
+    right: -5vw;
+  }
 }
-.draggable {
-  cursor: move; /* fallback: no `url()` support or images disabled */
-  // cursor: url(images/grab.cur); /* fallback: Internet Explorer */
-  cursor: -webkit-grab; /* Chrome 1-21, Safari 4+ */
-  cursor:    -moz-grab; /* Firefox 1.5-26 */
-  cursor:         grab; /* W3C standards syntax, should come least */
+@media screen and (min-width: 2500px) {
+  .ground {
+    right: -2vw;
+  }
 }
-.draggable:active {
-  // cursor: url(images/grabbing.cur);
-  cursor: -webkit-grabbing;
-  cursor:    -moz-grabbing;
-  cursor:         grabbing;
-}
-label{
-  font-family: sans-serif;
-  text-align: center;
-  display: block;
-  position:absolute;
-  width:100%;
-  left:0;
-  top: calc(50% + 50px);
-  z-index: -1;
-}
-
 </style>
