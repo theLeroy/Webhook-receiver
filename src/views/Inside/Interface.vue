@@ -46,7 +46,6 @@ export default {
       try {
         var successful = document.execCommand('copy')
         var msg = successful ? 'successful' : 'unsuccessful'
-        console.log('Copying text command was ' + msg)
         if (msg === 'successful') {
           console.log('copied')
           let t = this.$refs.Ctext.innerHTML

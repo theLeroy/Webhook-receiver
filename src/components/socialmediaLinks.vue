@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'socialmediaLinks',
+  name: 'socialmediaLinks'
 }
 </script>
 

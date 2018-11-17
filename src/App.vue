@@ -3,47 +3,7 @@
 </template>
 
 <script type="text/javascript">
-// const userid = 'sdsdsdsdsd'
-//
-
-// import gql_startNewStory from '@/graphql/Mutation/WebhookByUser.gql'
-// import WebhookByUser from '@/graphql/Query/WebhookByUser.gql'
-
 export default {
-  // mounted () {
-  //   this.$apollo.mutate({
-  //     // Query
-  //     mutation: WebhookByUser,
-  //     // Parameters
-  //     variables: {
-  //       hash: 'cHGMPUuXed18ztHs4CRY0T7nVvR7pG0Uj4V6mkLKscpMb90XU7NTfL6bCbhVs4JH'
-  //     },
-  //     // Update the cache with the result
-  //     // The query will be updated with the optimistic response
-  //     // and then with the real result of the mutation
-  //     update: (store, { data }) => {
-  //       Data object = token from story -> Local localStorage
-  //     }
-  //   })
-  // },
-  // methods: {
-  //   WebhookByUser(userid) {
-  //     this.$apollo.mutate({
-  //       // Query
-  //       mutation: WebhookByUser,
-  //       // Parameters
-  //       variables: {
-  //         token: userid
-  //       },
-  //       // update: (store, { data: { nextStep } }) => {
-  //       //   if (nextStep.video) {
-  //       //     this.$router.push("/Video");
-  //       //   }
-  //       // }
-  //     })
-  //   }
-  // }
-
 }
 </script>
 
