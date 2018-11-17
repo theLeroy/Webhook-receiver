@@ -47,6 +47,7 @@ $greenText: #2ee6b7;
   position: absolute;
   margin-top: 0vh;
   margin-left: 0vw;
+  z-index: 1;
 }
 
 @for $i from 0 through 20 {
@@ -90,6 +91,7 @@ $greenText: #2ee6b7;
   right: -10vw;
 }
 .box {
+  z-index: -1;
   -webkit-filter: url("#goo");
   filter: url("#goo");
   width:100%;
