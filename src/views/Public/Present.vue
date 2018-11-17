@@ -16,6 +16,7 @@
         <input v-on:click="GtoE" class="ShowToken ap" type="submit" ref="iS2" value="Send & go to Endpoint">
       </div>
     </div>
+    <socialmediaLinks/>
     <FpAnimation/>
   </div>
 </template>
@@ -23,11 +24,13 @@
 <script>
 
 import FpAnimation from '@/components/FpAnimation'
+import socialmediaLinks from '@/components/socialmediaLinks'
 
 export default {
   name: 'Present',
   components: {
-    FpAnimation
+    FpAnimation,
+    socialmediaLinks
   },
   methods: {
     Cendpoint: function (event) {
@@ -48,21 +51,30 @@ export default {
     },
     GtoE: function (event) {
       let text = this.$refs.iS1.value
-      if (text.length === 64){
+      if (text.length === 64) {
         this.$router.push('home/' + text)
       } else {
-          this.$refs.opentE.style.background = '#E97569'
-          setTimeout(() => {
-            this.$refs.opentE.style.background = 'linear-gradient(135deg, #33e6d7 0%, #29e68e 100%)'
-           }, 1000)
+        this.$refs.opentE.style.background = '#E97569'
+        setTimeout(() => {
+          this.$refs.opentE.style.background = 'linear-gradient(135deg, #33e6d7 0%, #29e68e 100%)'
+        }, 1000)
       }
     }
   }
 }
 
 </script>
+<style lang="scss">
+body {
+  overflow: hidden;
+}
+html {
+  overflow: hidden;
+}
+</style>
 
 <style scoped lang="scss">
+
 $greenText: #2ee6b7;
 .Title {
   font-size: 60px;
