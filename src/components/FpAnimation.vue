@@ -97,6 +97,12 @@ $greenText: #2ee6b7;
   position: absolute;
   left:0;
   top:0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 @media screen and (min-width: 1500px) {
   .ground {
