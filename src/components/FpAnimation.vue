@@ -116,4 +116,49 @@ $greenText: #2ee6b7;
     right: -2vw;
   }
 }
+@media screen and (max-width: 1350px) {
+  .ground {
+    right: -15vw;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .ground {
+    right: -25vw;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .ground {
+    right: -30vw;
+  }
+}
+@media screen and (max-width: 750px) {
+  .ground {
+    right: -45vw;
+  }
+}
+@media screen and (max-width: 550px) {
+  .ground {
+    right: -65vw;
+  }
+}
+@media screen and (max-width: 450px) {
+  .ground {
+    right: -77vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  .ground {
+    right: -87vw;
+  }
+}
+@media screen and (max-width: 350px) {
+  .ground {
+    right: -100vw;
+  }
+}
+@media screen and (max-width: 300px) {
+  .ground {
+    right: -120vw;
+  }
+}
 </style>

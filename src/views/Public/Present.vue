@@ -185,4 +185,33 @@ input {
   display: inline-block;
 }
 
+@media screen and (max-width: 1100px) {
+  .Title {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .Title {
+    font-size: 35px;
+    width: 400px
+  }
+}
+@media screen and (max-width: 580px) {
+  .Title {
+    font-size: 30px;
+    width: 300px
+  }
+  .btn {
+    display: block;
+  }
+  .ib {
+    margin-left: 0px;
+    margin-top: 140px;
+  }
+}
+@media screen and (max-height: 650px) {
+  .Title {
+    margin-top: 5vh;
+  }
+}
 </style>
