@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="edpoint"  v-on:click="copy">
+    <div class="edpoint" v-on:click="copy">
       <span ref="Ctext" class="ShowToken">{{Url}}/r/us/{{Token}}</span>
     </div>
-    <div v-for="(WebhookByUser, index) in WebhookByUser">
+    <div id="green" v-for="(WebhookByUser, index) in WebhookByUser">
       <prism class="no-whitespace-normalization" language="json">
 Id: "{{WebhookByUser._id}}",
 Endpoint: "{{WebhookByUser.UserId}}",
@@ -33,7 +33,8 @@ export default {
   data () {
     return {
       Token: this.$route.params.Token,
-      Url: window.location.hostname
+      Url: window.location.hostname,
+      WebhookByUser: ''
     }
   },
   methods: {
@@ -93,6 +94,16 @@ export default {
         }
       }
     }
+  },
+  watch: {
+    WebhookByUser: (WebhookByUser) => {
+      document.getElementById('green').style.background = '#2ee6b7'
+      document.getElementById('green').style.color = 'rgba(0,0,0,0)'
+      setTimeout(() => {
+        document.getElementById('green').style.background = ''
+        document.getElementById('green').style.color = ''
+      }, 1000)
+    }
   }
 }
 </script>
@@ -140,6 +151,9 @@ $greenText: #2ee6b7;
   font-size: 16px;
   text-align: center;
   margin: 20px;
+}
+#green {
+  transition: 0.5s;
 }
 
 </style>
