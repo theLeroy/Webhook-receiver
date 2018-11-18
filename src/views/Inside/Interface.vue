@@ -3,7 +3,7 @@
     <div class="edpoint"  v-on:click="copy">
       <span ref="Ctext" class="ShowToken">{{Url}}/r/us/{{Token}}</span>
     </div>
-    <div v-for="(WebhookByUser, index) in WebhookByUser.reverse()">
+    <div v-for="(WebhookByUser, index) in WebhookByUser">
       <prism class="no-whitespace-normalization" language="json">
 Id: "{{WebhookByUser._id}}",
 Endpoint: "{{WebhookByUser.UserId}}",
@@ -12,6 +12,9 @@ Content: {
    {{WebhookByUser.WebhookConntent}}
 }
       </prism>
+    </div>
+    <div v-if="WebhookByUser.length > 100" class="morethen50">
+      Unfortunately, more than 100 webhooks cannot be displayed. However, new webhooks are automatically updated and displayed at the top.
     </div>
   </div>
 </template>
@@ -79,11 +82,11 @@ export default {
         },
         // Mutate the previous result
         updateQuery: (previousResult, { subscriptionData }) => {
-          console.log(previousResult, subscriptionData)
+          // console.log(previousResult, subscriptionData)
           return {
             WebhookByUser: [
-              ...previousResult.WebhookByUser,
-              subscriptionData.data.NewWebhookIncoming
+              subscriptionData.data.NewWebhookIncoming,
+              ...previousResult.WebhookByUser
             ]
           }
           // Here, return the new result from the previous with the new data
@@ -131,6 +134,12 @@ $greenText: #2ee6b7;
   padding: 0px 20px;
   color: #8b8b8b;
   display: inline-block;
+}
+.morethen50 {
+  color: $greenText;
+  font-size: 16px;
+  text-align: center;
+  margin: 20px;
 }
 
 </style>

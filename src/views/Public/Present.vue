@@ -32,6 +32,10 @@ export default {
     FpAnimation,
     socialmediaLinks
   },
+  mounted: function () {
+    document.querySelector('body').style.overflow = 'hidden'
+    document.querySelector('html').style.overflow = 'hidden'
+  },
   methods: {
     Cendpoint: function (event) {
       var text = ''
@@ -65,15 +69,16 @@ export default {
 
 </script>
 <style lang="scss">
+
+</style>
+
+<style scoped lang="scss">
 body {
   overflow: hidden;
 }
 html {
   overflow: hidden;
 }
-</style>
-
-<style scoped lang="scss">
 
 $greenText: #2ee6b7;
 .Title {
