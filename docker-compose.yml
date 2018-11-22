@@ -1,7 +1,7 @@
 version: '3'
 services:
-  app:
-    container_name: Webhook
+  webhook:
+    container_name: webhook
     restart: always
     build: .
     ports:
