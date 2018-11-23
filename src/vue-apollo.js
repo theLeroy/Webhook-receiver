@@ -17,7 +17,7 @@ Vue.use(VueApollo)
 const AUTH_TOKEN = 'apollo-token'
 
 // Http endpoint
-const httpEndpoint = location.origin + '/graphql'
+const httpEndpoint = location.origin + ':4000/graphql'
 // Files URL root
 export const filesRoot = process.env.VUE_APP_FILES_ROOT || httpEndpoint.substr(0, httpEndpoint.indexOf('/graphql'))
 
@@ -62,12 +62,12 @@ export function createProvider (options = {}) {
 
   const httpLink = new HttpLink({
     // You should use an absolute URL here
-    uri: location.origin + '/graphql'
+    uri: location.origin + ':4000/graphql'
   })
 
   // Create the subscription websocket link
   const wsLink = new WebSocketLink({
-    uri: 'ws://' + location.host + '/subscriptions',
+    uri: 'ws://' + location.host + ':4000/subscriptions',
     options: {
       reconnect: true
     }
