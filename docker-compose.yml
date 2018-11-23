@@ -3,6 +3,8 @@ services:
   webhook:
     container_name: webhook
     restart: always
-    build: .
+    image: nginx
+    volumes:
+      - '$PWD/dist:/usr/share/nginx/html:ro'
     ports:
-      - '80:8080'
+      - '80:80'
