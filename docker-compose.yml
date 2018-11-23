@@ -8,3 +8,5 @@ services:
       - '$PWD/dist:/usr/share/nginx/html:ro'
     ports:
       - '80:80'
+    links:
+      - api
