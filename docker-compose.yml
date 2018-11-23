@@ -1,12 +1,12 @@
-version: '3'
-services:
-  webhook:
-    container_name: webhook
-    restart: always
-    image: nginx
-    volumes:
-      - '$PWD/dist:/usr/share/nginx/html:ro'
-    ports:
-      - '80:80'
-    links:
-      - api
+# version: '3'
+# services:
+#   webhook:
+#     container_name: webhook
+#     restart: always
+#     image: nginx
+#     volumes:
+#       - '$PWD/dist:/usr/share/nginx/html:ro'
+#     ports:
+#       - '80:80'
+#     links:
+#       - api
