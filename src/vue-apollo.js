@@ -62,12 +62,12 @@ export function createProvider (options = {}) {
 
   const httpLink = new HttpLink({
     // You should use an absolute URL here
-    uri: 'http://localhost:4000/graphql'
+    uri: 'http://api:4000'
   })
 
   // Create the subscription websocket link
   const wsLink = new WebSocketLink({
-    uri: 'ws://localhost:4000/subscriptions',
+    uri: 'ws://api:4000/subscriptions',
     options: {
       reconnect: true
     }
