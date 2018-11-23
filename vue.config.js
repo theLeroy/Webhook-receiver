@@ -4,7 +4,7 @@ module.exports = {
   configureWebpack: {
     plugins: [
       new CopyWebpackPlugin([
-        'nginx.conf'
+        // 'nginx.conf'
       ])
     ]
   }
