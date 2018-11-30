@@ -3,9 +3,6 @@
     <div class="edpoint" v-on:click="copy">
       <span ref="Ctext" class="ShowToken">{{Url}}/r/us/{{Token}}</span>
     </div>
-    <div class="CL">
-      Current listening.
-    </div>
     <div id="green" v-for="(WebhookByUser, index) in WebhookByUser">
       <prism class="no-whitespace-normalization" language="json">
 Id: "{{WebhookByUser._id}}",
@@ -113,44 +110,6 @@ export default {
 
 <style scoped lang="scss">
 $greenText: #2ee6b7;
-
-.CL {
-  color: $greenText;
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  animation: loading 2s infinite;
-}
-@keyframes loading {
-  0% {
-    color: #33e6d7;
-    color: -moz-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
-    color: -webkit-gradient(left top, right bottom, color-stop(0%, #33e6d7), color-stop(100%, #29e68e));
-    color: -webkit-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
-    color: -o-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
-    color: -ms-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
-    color: linear-gradient(135deg, #33e6d7 0%, #29e68e 100%);
-  }
-  50% {
-    color: #33e6d7;
-    color: -moz-linear-gradient(-45deg, #29e68e 0%, #33e6d7 100%);
-    color: -webkit-gradient(left top, right bottom, color-stop(0%, #33e6d7), color-stop(100%, #29e68e));
-    color: -webkit-linear-gradient(-45deg, #29e68e 0%, #33e6d7 100%);
-    color: -o-linear-gradient(-45deg, #29e68e 0%, #33e6d7 100%);
-    color: -ms-linear-gradient(-45deg, #29e68e 0%, #33e6d7 100%);
-    color: linear-gradient(135deg, #29e68e 0%, #33e6d7 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33e6d7', endColorstr='#29e68e', GradientType=1 );
-  }
-  100% {
-    color: #33e6d7;
-    color: -moz-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
-    color: -webkit-gradient(left top, right bottom, color-stop(0%, #33e6d7), color-stop(100%, #29e68e));
-    color: -webkit-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
-    color: -o-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
-    color: -ms-linear-gradient(-45deg, #33e6d7 0%, #29e68e 100%);
-    color: linear-gradient(135deg, #33e6d7 0%, #29e68e 100%);
-  }
-}
 
 @mixin backG() {
   background: #33e6d7;
