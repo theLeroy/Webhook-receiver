@@ -87,12 +87,15 @@ html {
 }
 .Help {
   line-height: 3;
-  font-size: 22px;
+  font-size: 15px;
   margin-left: 5vw;
   color: $greenText;
   font-weight: 500;
   text-decoration: underline;
-  margin-top: 20px;
+  margin-top: 150px;
+  a {
+    color: $greenText !important;
+  }
 }
 
 .Title {
@@ -226,6 +229,9 @@ input {
   .ib {
     margin-left: 0px;
     margin-top: 140px;
+  }
+  .Help {
+    margin-top: 300px;
   }
 }
 @media screen and (max-height: 650px) {
