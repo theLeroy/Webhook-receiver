@@ -16,6 +16,11 @@
         <input v-on:click="GtoE" class="ShowToken ap" type="submit" ref="iS2" value="Send & go to Endpoint">
       </div>
     </div>
+    <div class="Help">
+      <a href="https://github.com/theLeroy/Webhook-receiver/blob/master/README.md">
+        How does this work?
+      </a>
+    </div>
     <socialmediaLinks/>
     <FpAnimation/>
   </div>
@@ -73,14 +78,23 @@ export default {
 </style>
 
 <style scoped lang="scss">
+$greenText: #2ee6b7;
 body {
   overflow: hidden;
 }
 html {
   overflow: hidden;
 }
+.Help {
+  line-height: 3;
+  font-size: 22px;
+  margin-left: 5vw;
+  color: $greenText;
+  font-weight: 500;
+  text-decoration: underline;
+  margin-top: 20px;
+}
 
-$greenText: #2ee6b7;
 .Title {
   font-size: 60px;
   margin-left: 5vw;
