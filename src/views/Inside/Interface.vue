@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="edpoint" v-on:click="copy">
-      <span ref="Ctext" class="ShowToken">{{Url}}/r/us/{{Token}}</span>
+      <span ref="Ctext" class="ShowToken">{{Url}}:9000/r/us/{{Token}}</span>
     </div>
     <div class="CL">
       Current listening.
