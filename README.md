@@ -29,3 +29,6 @@ Terminal:
 
 ## Project
 This project was programmed by theLeroy [https://github.com/theLeroy]. I am a beginner with mongoDb, vue and GQL. All this is completely open source and I'm glad if you give me tips. Pleas Credit me.
+
+## Try in Terminal
+curl -X POST webhook.space:9000/r/us/EaLxPFoCVkfAMGkA4XqqGyLdvs2ZcaiMqE3o7VY1C5bhnghsVkmbbfqXNU8ThWg4 -H 'Content-Type: application/json' -d '{"payload":"hey"}'
